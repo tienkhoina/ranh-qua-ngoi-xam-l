@@ -147,7 +147,12 @@ function App() {
     <div>
       <div 
         className="mainname" 
-        style={{ textAlign: 'center', fontWeight: 'bold' }}
+        style={{
+          textAlign: 'center', 
+          fontSize: '2rem', 
+          fontWeight: 'bold', 
+          marginBottom: '20px'
+        }}
       >
         Web của Tiến Khôi :D
       </div>
