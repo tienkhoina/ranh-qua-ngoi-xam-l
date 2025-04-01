@@ -1,0 +1,100 @@
+.game-container {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/background.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.bird {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 100px;
+  background-image: url('/assets/bird.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  z-index: 10;
+  transition: transform 0.1s ease-out;
+  image-rendering: crisp-edges;
+}
+
+.pipe {
+  position: absolute;
+  background-image: url('/assets/pipe.png');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.pipe.top {
+  top: 0;
+  transform: rotate(180deg);
+  background-position: bottom;
+}
+
+.pipe.bottom {
+  bottom: 0;
+  background-position: top;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 15;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 20;
+  width: 80%;
+  max-width: 300px;
+}
+
+.game-over h2 {
+  margin-top: 0;
+  color: #FFD700;
+}
+
+.game-over button {
+  background: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.game-over button:hover {
+  background: #FFEE58;
+  transform: scale(1.05);
+}
