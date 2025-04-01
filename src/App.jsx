@@ -144,48 +144,56 @@ function App() {
   }
 
   return (
-    <div className="game-container" style={{ width: gameSize.width, height: gameSize.height }}>
-      <div className="background-layer" />
-      <div className="score">Score: {score}</div>
-      
-      {/* Bird */}
+    <div>
       <div 
-        className="bird"
-        style={{
-          top: birdPosition,
-          transform: `rotate(${birdRotation}deg)`
-        }}
-      />
+        className="mainname" 
+        style={{ textAlign: 'center', fontWeight: 'bold' }}
+      >
+        Web của Tiến Khôi :D
+      </div>
+      <div className="game-container" style={{ width: gameSize.width, height: gameSize.height }}>
+        <div className="background-layer" />
+        <div className="score">Score: {score}</div>
+        
+        {/* Bird */}
+        <div 
+          className="bird"
+          style={{
+            top: birdPosition,
+            transform: `rotate(${birdRotation}deg)`
+          }}
+        />
 
-      {/* Pipes */}
-      {pipes.map((pipe, index) => (
-        <div key={index}>
-          <div 
-            className="pipe top"
-            style={{
-              left: pipe.x,
-              height: pipe.topHeight,
-              width: pipeWidth
-            }}
-          />
-          <div 
-            className="pipe bottom"
-            style={{
-              left: pipe.x,
-              height: pipe.bottomHeight,
-              width: pipeWidth
-            }}
-          />
-        </div>
-      ))}
+        {/* Pipes */}
+        {pipes.map((pipe, index) => (
+          <div key={index}>
+            <div 
+              className="pipe top"
+              style={{
+                left: pipe.x,
+                height: pipe.topHeight,
+                width: pipeWidth
+              }}
+            />
+            <div 
+              className="pipe bottom"
+              style={{
+                left: pipe.x,
+                height: pipe.bottomHeight,
+                width: pipeWidth
+              }}
+            />
+          </div>
+        ))}
 
-      {!gameActive && (
-        <div className="game-over">
-          <h2>Em phải tin anh chứ</h2>
-          <p>Anh chỉ yêu mỗi {score} em thôi</p>
-          <button onClick={resetGame}>Yêu lại nào </button>
-        </div>
-      )}
+        {!gameActive && (
+          <div className="game-over">
+            <h2>Em phải tin anh chứ</h2>
+            <p>Anh chỉ yêu mỗi {score} em thôi</p>
+            <button onClick={resetGame}>Yêu lại nào </button>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
